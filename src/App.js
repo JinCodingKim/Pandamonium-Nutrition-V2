@@ -1,14 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import routes from "./routes.js";
+import "./App.css";
 
 const App = () => (
-  <Fragment>
+  <div className="App">
     <NavBar />
     {routes}
     <Footer />
-  </Fragment>
+  </div>
 );
 
 export default App;
