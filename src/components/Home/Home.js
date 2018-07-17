@@ -6,7 +6,13 @@ class Home extends Component {
     return (
       <div id="main-home">
         <div className="home-img">
-          <h1>WELCOME TO THE JUNGLE</h1>
+          <h1>
+            WELCOME
+            <br />
+            <span>TO THE</span>
+            <br />
+            JUNGLE
+          </h1>
           <button>JOIN PANDAMONIUM</button>
         </div>
       </div>

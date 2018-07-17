@@ -1,6 +1,8 @@
+#main-home {
+  padding-top: 65px; }
+
 .home-img {
-  padding-top: 65px;
-  height: 100vh;
+  height: calc(100vh - 65px);
   background-image: url("../../assets/img/home-splash.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -9,21 +11,25 @@
   flex-direction: column;
   align-items: center; }
   .home-img > h1 {
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin: 0;
     text-align: center;
     color: #212121;
     font-weight: 900;
-    padding: 120px 0 70px 0;
-    font-size: 70px;
-    letter-spacing: 0.5px;
-    line-height: 75px; }
+    padding: 125px 0px 70px 0px;
+    font-size: 65px;
+    letter-spacing: -7px;
+    line-height: 45px; }
+    .home-img > h1 span {
+      font-size: 30px;
+      letter-spacing: 0px;
+      line-height: 55px; }
   .home-img > button {
     color: #212121;
     background-color: #FF6D00;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     width: 260px;
     height: 40px;
     border-radius: 2px;

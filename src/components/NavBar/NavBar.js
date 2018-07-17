@@ -11,17 +11,24 @@ class NavBar extends Component {
     openMain: false,
     openSub: false
   };
-  toggleMenu = val =>
-    this.setState(currentState => ({ [val]: !currentState[val] }));
+  toggleMenu = (val1, val2) =>
+    this.setState(currentState => ({
+      [val1]: !currentState[val1],
+      [val2]: false
+    }));
   render() {
     const { openMain, openSub } = this.state;
     const menu = () => this.toggleMenu("openMain");
     const subMenu = () => this.toggleMenu("openSub");
+    const newPage = () => this.toggleMenu("openMain", "openSub");
     return (
       <Fragment>
+        {/* Main Header */}
         <div id="main-header">
           <div className="logo-container">
-            <img src={Pandamonium} alt="Pandamonium" />
+            <Link to="/">
+              <img src={Pandamonium} alt="Pandamonium" />
+            </Link>
           </div>
           <div className="sub-nav-container">
             <div className="search">
@@ -31,6 +38,7 @@ class NavBar extends Component {
               <img src={Cart} alt="Cart" />
             </div>
 
+            {/* Hamburger */}
             <div id="burger-toggle">
               <input type="checkbox" checked={openMain} onClick={menu} />
               <span />
@@ -39,9 +47,11 @@ class NavBar extends Component {
             </div>
           </div>
         </div>
+
+        {/* Dropdown Menu */}
         <ul id={openMain ? "open-main" : "close-main"}>
           <li>
-            <Link to="/shop" onClick={menu}>
+            <Link to="/shop" onClick={newPage}>
               <p className="menu-item">Shop</p>
             </Link>
             <img
@@ -52,16 +62,24 @@ class NavBar extends Component {
             />
           </li>
           <ul id={openSub ? "open-sub" : "close-sub"}>
-            <li className="menu-item">Supplements</li>
-            <li className="menu-item">Gear</li>
+            <li>
+              <Link to="/shop/supplement" onClick={newPage}>
+                <p className="menu-item">Supplements</p>
+              </Link>
+            </li>
+            <li>
+              <Link to="/shop/gear" onClick={newPage}>
+                <p className="menu-item">Gear</p>
+              </Link>
+            </li>
           </ul>
           <li>
-            <Link to="/" onClick={menu}>
+            <Link to="/" onClick={newPage}>
               <p className="menu-item">Panda Life</p>
             </Link>
           </li>
           <li>
-            <Link to="/" onClick={menu}>
+            <Link to="/" onClick={newPage}>
               <p className="menu-item">Contact</p>
             </Link>
           </li>

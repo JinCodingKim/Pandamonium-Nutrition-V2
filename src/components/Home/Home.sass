@@ -1,10 +1,10 @@
 @import '../../guide.sass'
 
 #main-home
+    padding-top: 65px
 
 .home-img
-    padding-top: 65px
-    height: 100vh
+    height: calc(100vh - 65px)
     background-image: url('../../assets/img/home-splash.jpg')
     background-position: center
     background-repeat: no-repeat
@@ -20,17 +20,22 @@
         text-align: center
         color: $black
         font-weight: 900
-        padding: 120px 0 70px 0
-        font-size: 70px
-        letter-spacing: 0.5px
-        line-height: 75px
+        padding: 125px 0px 70px 0px
+        font-size: 65px
+        letter-spacing: -7px
+        line-height: 45px
 
+        & span
+            font-size: 30px
+            letter-spacing: 0px
+            line-height: 55px
+            
     & > button
         color: $black
         background-color: $orange
         font-size: 20px
         font-weight: 700
-        letter-spacing: 0.5px
+        letter-spacing: 1px
         width: 260px
         height: 40px
         border-radius: 2px
