@@ -1,0 +1,41 @@
+@import '../../guide.sass'
+
+#main-home
+
+.home-img
+    padding-top: 65px
+    height: 100vh
+    background-image: url('../../assets/img/home-splash.jpg')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    flex-direction: column
+    // justify-content: space-around
+    align-items: center
+
+    & > h1
+        font-family: $open-sans
+        margin: 0
+        text-align: center
+        color: $black
+        font-weight: 900
+        padding: 120px 0 70px 0
+        font-size: 70px
+        letter-spacing: 0.5px
+        line-height: 75px
+
+    & > button
+        color: $black
+        background-color: $orange
+        font-size: 20px
+        font-weight: 700
+        letter-spacing: 0.5px
+        width: 260px
+        height: 40px
+        border-radius: 2px
+        box-shadow: $active-shadow
+        transition: box-shadow 0.25s
+
+    & > button:hover
+        box-shadow: none

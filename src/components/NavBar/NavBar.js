@@ -3,20 +3,20 @@ import { Link, withRouter } from "react-router-dom";
 import Pandamonium from "../../assets/img/pandamonium.svg";
 import Search from "../../assets/img/search.svg";
 import Cart from "../../assets/img/cart.svg";
+import Down from "../../assets/img/chevron-down.svg";
 import "./NavBar.css";
 
 class NavBar extends Component {
   state = {
-    open: false
+    openMain: false,
+    openSub: false
   };
-  toggleMenu = () => {
-    console.log("OPEN");
-    this.setState(currentState => {
-      return { open: !currentState.open };
-    });
-  };
+  toggleMenu = val =>
+    this.setState(currentState => ({ [val]: !currentState[val] }));
   render() {
-    const { open } = this.state;
+    const { openMain, openSub } = this.state;
+    const menu = () => this.toggleMenu("openMain");
+    const subMenu = () => this.toggleMenu("openSub");
     return (
       <Fragment>
         <div id="main-header">
@@ -32,36 +32,36 @@ class NavBar extends Component {
             </div>
 
             <div id="burger-toggle">
-              <input type="checkbox" checked={open} onClick={this.toggleMenu} />
+              <input type="checkbox" checked={openMain} onClick={menu} />
               <span />
               <span />
               <span />
             </div>
           </div>
         </div>
-        <ul id={open ? "open" : "close"}>
+        <ul id={openMain ? "open-main" : "close-main"}>
           <li>
-            <Link to="/shop" onClick={this.toggleMenu}>
+            <Link to="/shop" onClick={menu}>
               <p className="menu-item">Shop</p>
             </Link>
-            <svg
-              className="menu-icon"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-            >
-              <path d="M26.297 12.625l-11.594 11.578c-0.391 0.391-1.016 0.391-1.406 0l-11.594-11.578c-0.391-0.391-0.391-1.031 0-1.422l2.594-2.578c0.391-0.391 1.016-0.391 1.406 0l8.297 8.297 8.297-8.297c0.391-0.391 1.016-0.391 1.406 0l2.594 2.578c0.391 0.391 0.391 1.031 0 1.422z" />
-            </svg>
+            <img
+              onClick={subMenu}
+              className={openSub ? "icon-active" : ""}
+              src={Down}
+              alt="Down"
+            />
           </li>
+          <ul id={openSub ? "open-sub" : "close-sub"}>
+            <li className="menu-item">Supplements</li>
+            <li className="menu-item">Gear</li>
+          </ul>
           <li>
-            <Link to="/" onClick={this.toggleMenu}>
+            <Link to="/" onClick={menu}>
               <p className="menu-item">Panda Life</p>
             </Link>
           </li>
           <li>
-            <Link to="/" onClick={this.toggleMenu}>
+            <Link to="/" onClick={menu}>
               <p className="menu-item">Contact</p>
             </Link>
           </li>
