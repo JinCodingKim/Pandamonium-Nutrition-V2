@@ -29,6 +29,7 @@
 
 .search, .cart
     height: 20px
+    cursor: pointer
 
     & > img
         height: 100%
@@ -40,7 +41,7 @@
 // Search Bar
 
 #open-search, #close-search
-    transition: width 0.2s, border 0.2s
+    transition: border 0.2s, width 0.2s
     background-color: $light-grey
 
 #open-search
@@ -52,6 +53,7 @@
     font-size: 15px
     color: $black
     letter-spacing: 0.5px
+
 
     &:focus
         border: 2px solid $orange
@@ -66,20 +68,20 @@
 #burger-toggle
     display: block
     position: relative
-    top: -2
+    top: 0
     z-index: 3
     user-select: none
     width: 32px
-    height: 24px
+    height: 25px
 
     input
         display: block
         width: 30px
-        height: 24px
+        height: 25px
         border-radius: 2px
-        position: fixed
-        top: 15px
-        right: 4.69vw
+        position: absolute
+        top: -5px
+        right: -2px
         cursor: pointer
         opacity: 0
         z-index: 4
@@ -110,14 +112,14 @@
 
         &:nth-last-child(1)
             transform-origin: 0% 100%
-            top: 0.5px
+            top: 1px
     
         &:nth-last-child(2) 
-            top: 16.5px
+            top: 17px
     
         &:nth-last-child(3) 
             transform-origin: 0% 0%
-            top: 8.5px
+            top: 9px
     
 
 // Main DropDown-Menu
@@ -129,9 +131,7 @@
 
 #open-main, #close-main
     position: fixed
-    transition: top 0.5s linear
-    // transition: top 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94)
-    // left: 0
+    transition: top 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94)
     width: 100%
     height: 100%
     background-color: rgba($grey, 0.5)
@@ -164,7 +164,10 @@
     letter-spacing: 0.5px
     height: 20px
     
-.icon-active
+.icon-on, .icon-off
+    cursor: pointer
+
+.icon-on
     transform: rotate(180deg)
     transform-origin: 50% 50%
 
@@ -172,9 +175,7 @@
 // Sub DropDown-Menu
 
 #open-sub, #close-sub
-    position: relative
     transition: height 0.2s
-    // width: 100%
 
     & > li
         background-color: $white

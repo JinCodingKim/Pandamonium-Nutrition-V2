@@ -23,7 +23,8 @@
     margin: 10px; }
 
 .search, .cart {
-  height: 20px; }
+  height: 20px;
+  cursor: pointer; }
   .search > img, .cart > img {
     height: 100%; }
 
@@ -32,7 +33,7 @@
   align-items: center; }
 
 #open-search, #close-search {
-  transition: width 0.2s, border 0.2s;
+  transition: border 0.2s, width 0.2s;
   background-color: #EEEEEE; }
 
 #open-search {
@@ -55,19 +56,19 @@
 #burger-toggle {
   display: block;
   position: relative;
-  top: -2;
+  top: 0;
   z-index: 3;
   user-select: none;
   width: 32px;
-  height: 24px; }
+  height: 25px; }
   #burger-toggle input {
     display: block;
     width: 30px;
-    height: 24px;
+    height: 25px;
     border-radius: 2px;
-    position: fixed;
-    top: 15px;
-    right: 4.69vw;
+    position: absolute;
+    top: -5px;
+    right: -2px;
     cursor: pointer;
     opacity: 0;
     z-index: 4; }
@@ -93,12 +94,12 @@
     transition: transform 0.5s cubic-bezier(0.68, -1, 0.5, 1.55), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.33s ease-in-out; }
     #burger-toggle span:nth-last-child(1) {
       transform-origin: 0% 100%;
-      top: 0.5px; }
+      top: 1px; }
     #burger-toggle span:nth-last-child(2) {
-      top: 16.5px; }
+      top: 17px; }
     #burger-toggle span:nth-last-child(3) {
       transform-origin: 0% 0%;
-      top: 8.5px; }
+      top: 9px; }
 
 #open-main, #close-main, #open-sub, #close-sub {
   padding: 0;
@@ -107,7 +108,7 @@
 
 #open-main, #close-main {
   position: fixed;
-  transition: top 0.5s linear;
+  transition: top 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94);
   width: 100%;
   height: 100%;
   background-color: rgba(189, 197, 200, 0.5); }
@@ -135,12 +136,14 @@
   letter-spacing: 0.5px;
   height: 20px; }
 
-.icon-active {
+.icon-on, .icon-off {
+  cursor: pointer; }
+
+.icon-on {
   transform: rotate(180deg);
   transform-origin: 50% 50%; }
 
 #open-sub, #close-sub {
-  position: relative;
   transition: height 0.2s; }
   #open-sub > li, #close-sub > li {
     background-color: #FAFAFA;

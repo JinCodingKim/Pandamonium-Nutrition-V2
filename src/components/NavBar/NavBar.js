@@ -72,7 +72,7 @@ class NavBar extends Component {
             </Link>
             <img
               onClick={() => this.toggleMenu("openSub")}
-              className={openSub ? "icon-active" : ""}
+              className={openSub ? "icon-on" : "icon-off"}
               src={Down}
               alt="Down"
             />
