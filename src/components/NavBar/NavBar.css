@@ -24,8 +24,33 @@
 
 .search, .cart {
   height: 20px; }
-  .search img, .cart img {
+  .search > img, .cart > img {
     height: 100%; }
+
+.search {
+  display: flex;
+  align-items: center; }
+
+#open-search, #close-search {
+  transition: width 0.2s, border 0.2s;
+  background-color: #EEEEEE; }
+
+#open-search {
+  margin-left: 5px;
+  height: 25px;
+  width: 120px;
+  border: 2px solid #212121;
+  padding: 2.5px 5px;
+  font-size: 15px;
+  color: #212121;
+  letter-spacing: 0.5px; }
+  #open-search:focus {
+    border: 2px solid #FF6D00; }
+
+#close-search {
+  margin-left: 0;
+  width: 0px;
+  border: 0px solid transparent; }
 
 #burger-toggle {
   display: block;
@@ -82,7 +107,7 @@
 
 #open-main, #close-main {
   position: fixed;
-  transition: top 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  transition: top 0.5s linear;
   width: 100%;
   height: 100%;
   background-color: rgba(189, 197, 200, 0.5); }
@@ -116,7 +141,7 @@
 
 #open-sub, #close-sub {
   position: relative;
-  transition: height 0.25s ease-in-out; }
+  transition: height 0.2s; }
   #open-sub > li, #close-sub > li {
     background-color: #FAFAFA;
     padding: 15px 40px; }

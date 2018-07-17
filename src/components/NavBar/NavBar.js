@@ -9,17 +9,18 @@ import "./NavBar.css";
 class NavBar extends Component {
   state = {
     openMain: false,
-    openSub: false
+    openSub: false,
+    openSearch: false,
+    searchVal: ""
   };
   toggleMenu = (val1, val2) =>
     this.setState(currentState => ({
       [val1]: !currentState[val1],
       [val2]: false
     }));
+  handleSearch = event => this.setState({ searchVal: event.target.value });
   render() {
-    const { openMain, openSub } = this.state;
-    const menu = () => this.toggleMenu("openMain");
-    const subMenu = () => this.toggleMenu("openSub");
+    const { openMain, openSub, openSearch, searchVal } = this.state;
     const newPage = () => this.toggleMenu("openMain", "openSub");
     return (
       <Fragment>
@@ -31,8 +32,19 @@ class NavBar extends Component {
             </Link>
           </div>
           <div className="sub-nav-container">
+            {/* Search Bar */}
             <div className="search">
-              <img src={Search} alt="Search" />
+              <img
+                src={Search}
+                alt="Search"
+                onClick={() => this.toggleMenu("openSearch")}
+              />
+              <input
+                id={openSearch ? "open-search" : "close-search"}
+                type="text"
+                value={searchVal}
+                onChange={this.handleSearch}
+              />
             </div>
             <div className="cart">
               <img src={Cart} alt="Cart" />
@@ -40,7 +52,11 @@ class NavBar extends Component {
 
             {/* Hamburger */}
             <div id="burger-toggle">
-              <input type="checkbox" checked={openMain} onClick={menu} />
+              <input
+                type="checkbox"
+                checked={openMain}
+                onClick={() => this.toggleMenu("openMain")}
+              />
               <span />
               <span />
               <span />
@@ -55,7 +71,7 @@ class NavBar extends Component {
               <p className="menu-item">Shop</p>
             </Link>
             <img
-              onClick={subMenu}
+              onClick={() => this.toggleMenu("openSub")}
               className={openSub ? "icon-active" : ""}
               src={Down}
               alt="Down"
