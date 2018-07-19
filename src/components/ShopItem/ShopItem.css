@@ -37,7 +37,7 @@
   width: 100%;
   font-weight: 700;
   background-color: #EEEEEE;
-  transition: bottom 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94), border 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
+  transition: all 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
   .item-title-price-open > h5, .item-title-price-close > h5 {
     font-size: 17.5px;
     margin: 0; }
@@ -119,25 +119,37 @@
     justify-content: center;
     font-weight: 700;
     letter-spacing: 1px;
-    font-size: 15px; }
+    font-size: 15px;
+    cursor: pointer; }
     .item-buttons button svg {
       width: 12.5px;
       height: 12.5px;
       margin: 2.5px 10px 0 0; }
+  .item-buttons button:first-child:hover {
+    background-color: #4169E1;
+    border: 2px solid #4169E1; }
   .item-buttons button:first-child {
     background-color: #FF6D00;
     border: 2px solid #FF6D00;
     color: #EEEEEE;
-    width: calc(65% - 4px); }
+    width: calc(65% - 4px);
+    transition: all 0.25s ease; }
     .item-buttons button:first-child > svg path {
       fill: #EEEEEE; }
+  .item-buttons button:last-child:hover {
+    border: 2px solid #FF6D00;
+    color: #FF6D00; }
+    .item-buttons button:last-child:hover > svg path {
+      fill: #FF6D00; }
   .item-buttons button:last-child {
     background-color: transparent;
     border: 2px solid rgba(0, 0, 0, 0.2);
     color: rgba(33, 33, 33, 0.5);
     margin-left: 4px;
-    width: 35%; }
+    width: 35%;
+    transition: all 0.25s ease; }
     .item-buttons button:last-child > svg path {
+      transition: fill 0.25s ease;
       fill: rgba(33, 33, 33, 0.5); }
 
 /*# sourceMappingURL=ShopItem.css.map */

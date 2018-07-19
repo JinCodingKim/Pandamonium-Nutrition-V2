@@ -45,7 +45,7 @@
     width: 100%
     font-weight: 700
     background-color: $light-grey
-    transition: bottom 0.5s $zoom, border 0.5s $zoom
+    transition: all 0.5s $zoom
 
     & > h5
         font-size: 17.5px
@@ -138,20 +138,33 @@
         font-weight: 700
         letter-spacing: 1px
         font-size: 15px
+        cursor: pointer
 
         & svg
             width: 12.5px
             height: 12.5px
             margin: 2.5px 10px 0 0
+    
+    & button:first-child:hover
+        background-color: $blue
+        border: 2px solid $blue
 
     & button:first-child
         background-color: $orange
         border: 2px solid $orange
         color: $light-grey
         width: calc(65% - 4px)
+        transition: all 0.25s ease
 
         & > svg path
             fill: $light-grey
+
+    & button:last-child:hover
+        border: 2px solid $orange
+        color: $orange
+
+        & > svg path
+            fill: $orange
 
     & button:last-child
         background-color: transparent
@@ -159,7 +172,9 @@
         color: rgba($black, 0.5)
         margin-left: 4px
         width: 35%
+        transition: all 0.25s ease
 
         & > svg path
+            transition: fill 0.25s ease
             fill: rgba($black, 0.5)
 

@@ -22,6 +22,7 @@ class NavBar extends Component {
   render() {
     const { openMain, openSub, openSearch, searchVal } = this.state;
     const newPage = () => this.toggleMenu("openMain", "openSub");
+    let subShift = openSub ? "open" : "close";
     return (
       <Fragment>
         {/* Main Header */}
@@ -72,19 +73,19 @@ class NavBar extends Component {
             </Link>
             <img
               onClick={() => this.toggleMenu("openSub")}
-              className={openSub ? "icon-on" : "icon-off"}
+              className={`icon-${subShift}`}
               src={Down}
               alt="Down"
             />
           </li>
-          <ul id={openSub ? "open-sub" : "close-sub"}>
+          <ul id={`${subShift}-sub`} onClick={newPage}>
             <li>
-              <Link to="/shop/supplement" onClick={newPage}>
+              <Link to="/shop/supplement">
                 <p className="menu-item">Supplements</p>
               </Link>
             </li>
             <li>
-              <Link to="/shop/gear" onClick={newPage}>
+              <Link to="/shop/gear">
                 <p className="menu-item">Gear</p>
               </Link>
             </li>

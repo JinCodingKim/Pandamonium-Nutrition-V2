@@ -2,7 +2,7 @@
   background-color: #EEEEEE;
   position: fixed;
   top: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 65px;
   display: flex;
@@ -136,10 +136,10 @@
   letter-spacing: 0.5px;
   height: 20px; }
 
-.icon-on, .icon-off {
+.icon-open, .icon-close {
   cursor: pointer; }
 
-.icon-on {
+.icon-open {
   transform: rotate(180deg);
   transform-origin: 50% 50%; }
 

@@ -13,20 +13,17 @@ class ShopItem extends Component {
   render() {
     const { name, price, img } = this.props;
     const { openInfo } = this.state;
+    let shift = openInfo ? "open" : "close";
     return (
       <section id="item-main">
-        <div className={openInfo ? "item-img-open" : "item-img-close"}>
+        <div className={`item-img-${shift}`}>
           <img src={img} alt={name} />
         </div>
-        <div
-          className={
-            openInfo ? "item-title-price-open" : "item-title-price-close"
-          }
-        >
+        <div className={`item-title-price-${shift}`}>
           <h5>{name}</h5>
           <h6>$ {price}</h6>
         </div>
-        <div className={openInfo ? "item-icon-open" : "item-icon-close"}>
+        <div className={`item-icon-${shift}`}>
           <img
             onClick={this.toggleInfo}
             className={openInfo ? "item-on" : "item-off"}
@@ -34,7 +31,7 @@ class ShopItem extends Component {
             alt="Down"
           />
         </div>
-        <div id={openInfo ? "open-info" : "close-info"}>
+        <div id={`${shift}-info`}>
           <p>
             bla bla bla bla bla bla bla bla bla this is where short description
             will go bla bla bla bla
