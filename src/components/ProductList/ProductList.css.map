@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,UAAU;EACN,WAAW,EAAE,IAAI;EACjB,KAAK,ECGD,OAAO",
-"sources": ["ProductList.sass","../../guide.sass"],
-"names": [],
-"file": "ProductList.css"
-}

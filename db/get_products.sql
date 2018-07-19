@@ -1,4 +1,4 @@
-SELECT DISTINCT ON (p.product_name) p.product_name, p.product_price, r.product_img
+SELECT DISTINCT ON (p.product_name) p.product_id, p.product_name, p.product_price, r.product_img
 FROM products p
 JOIN productcategories c 
 ON p.category_id = c.category_id

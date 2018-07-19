@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,UAAU;EACN,WAAW,EAAE,IAAI;EACjB,UAAU,EAAE,MAAM;EAClB,KAAK,ECGD,OAAO;EDFX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM",
+"sources": ["Shop.sass","../../guide.sass"],
+"names": [],
+"file": "Shop.css"
+}

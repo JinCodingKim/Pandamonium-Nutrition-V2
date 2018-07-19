@@ -1,0 +1,165 @@
+@import '../../guide.sass'
+
+    
+#item-main
+    position: relative
+    width: calc(100% - 35px)
+    height: 372.5px
+    background-color: $light-grey
+    margin-bottom: 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+    border-bottom: $card
+    box-shadow: $active-shadow
+
+    
+// Image properties & transition of image opacity when opening up item small info
+.item-img-open, .item-img-close
+    position: relative
+    z-index: 1
+    height: 220px
+    width: 100%
+    display: flex
+    justify-content: center
+    transition: all 0.5s $zoom
+
+    & > img
+        height: 100%
+
+.item-img-open
+    opacity: 0.2
+    background-color: rgba(0,0,0,0.5)    
+
+.item-img-close
+    opacity: 1
+
+
+// Title and Price properties & transition of it going up with the small info opening
+.item-title-price-open, .item-title-price-close
+    position: absolute
+    z-index: 2
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    font-weight: 700
+    background-color: $light-grey
+    transition: bottom 0.5s $zoom, border 0.5s $zoom
+
+    & > h5
+        font-size: 17.5px
+        margin: 0
+    
+    & > h6
+        font-size: 15px
+        margin: 0
+        color: $orange
+
+.item-title-price-close
+    padding: 0 20px 5px 20px
+    height: 30px
+    bottom: 114px
+    border-top: 1px solid transparent
+
+.item-title-price-open
+    padding: 5px 20px 5px 20px
+    height: 45px
+    bottom: 189px
+    border-top: $card
+    
+
+// Small info opening icon & transition of it going up with the small info opening
+.item-icon-open, .item-icon-close
+    position: absolute
+    z-index: 2
+    width: 100%
+    height: 25px
+    padding: 0 30px 0 30px 5px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.35)
+    display: flex
+    justify-content: center
+    background-color: $light-grey
+    transition: bottom 0.5s $zoom
+
+.item-icon-close
+    bottom: 89px
+
+.item-icon-open
+    bottom: 165px
+
+.item-off, .item-on
+    cursor: pointer
+
+.item-off
+    transform: rotate(180deg)
+    transform-origin: 50% 50%
+
+
+// Info properties & transition of it going up when activated
+#open-info, #close-info
+    position: absolute
+    z-index: 1
+    padding: 10px 20px
+    height: 70px
+    width: 100%
+    background-color: $light-grey
+    transition: top 0.5s $zoom
+
+    & > p
+        margin: 0
+        height: 100%
+        font-size: 12px
+        color: rgba($black, 0.5)
+    
+#close-info
+    top: 276px
+
+#open-info
+    top: 206px
+
+
+// Buttons properties
+.item-buttons
+    position: relative
+    z-index: 2
+    top: 62px
+    padding: 15px
+    width: 100%
+    background-color: $light-grey
+    display: flex
+    flex-wrap: nowrap
+
+    & button
+        height: 60px
+        border-radius: 1px
+        display: flex
+        justify-content: center
+        font-weight: 700
+        letter-spacing: 1px
+        font-size: 15px
+
+        & svg
+            width: 12.5px
+            height: 12.5px
+            margin: 2.5px 10px 0 0
+
+    & button:first-child
+        background-color: $orange
+        border: 2px solid $orange
+        color: $light-grey
+        width: calc(65% - 4px)
+
+        & > svg path
+            fill: $light-grey
+
+    & button:last-child
+        background-color: transparent
+        border: 2px solid rgba(0, 0, 0, 0.2)
+        color: rgba($black, 0.5)
+        margin-left: 4px
+        width: 35%
+
+        & > svg path
+            fill: rgba($black, 0.5)
+
