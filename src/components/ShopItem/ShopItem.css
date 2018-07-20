@@ -1,7 +1,7 @@
 #item-main {
   position: relative;
   width: calc(100% - 35px);
-  height: 387.5px;
+  height: 400px;
   background-color: #EEEEEE;
   margin-bottom: 20px;
   display: flex;
@@ -130,19 +130,19 @@
     font-size: 12px; }
 
 #close-info {
-  top: 276px; }
+  top: 280px; }
   #close-info > p {
     color: #EEEEEE; }
 
 #open-info {
-  top: 222px; }
+  top: 235px; }
   #open-info > p {
     color: rgba(33, 33, 33, 0.5); }
 
 .item-buttons {
   position: relative;
   z-index: 2;
-  top: 47px;
+  top: 60px;
   padding: 15px;
   width: 100%;
   background-color: #EEEEEE;
