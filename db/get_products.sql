@@ -11,7 +11,12 @@ JOIN productcategoriesvariationsref r
 ON c.category_id = r.category_id
 WHERE
     CASE
-        WHEN NULLIF($1,'undefined') IS NULL THEN c.product_category IS NOT NULL
+        WHEN NULLIF($1,'undefined') IS NULL 
+        THEN c.product_category IS NOT NULL
         ELSE c.product_category = $1
     END
-GROUP BY c.product_category, p.product_id, p.product_name, p.product_price
+GROUP BY 
+c.product_category, 
+p.product_id, 
+p.product_name, 
+p.product_price

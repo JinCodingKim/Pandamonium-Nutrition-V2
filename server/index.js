@@ -23,6 +23,7 @@ app.use(cors());
 
 //ENDPOINTS
 app.get("/api/products", productCtrl.getProducts);
+app.get("/api/products/:name", productCtrl.getProductDetail);
 
 //SERVER LISTENING
 app.listen(port, () => console.log("Port listening on: " + port));

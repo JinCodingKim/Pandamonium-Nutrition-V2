@@ -1,11 +1,13 @@
 import axios from "axios";
 
 const GET_PRODUCTS = "GET_PRODUCTS";
+const GET_PRODUCT_DETAIL = "GET_PRODUCT_DETAIL";
 
 const initialState = {
   isLoading: false,
   isError: "",
-  products: []
+  products: [],
+  product: []
 };
 
 export function getProducts(type) {
@@ -15,10 +17,18 @@ export function getProducts(type) {
   };
 }
 
+export function getProductDetail(name) {
+  return {
+    type: GET_PRODUCT_DETAIL,
+    payload: axios.get(`/api/products/${name}`)
+  };
+}
+
 export default function shopReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case `${GET_PRODUCTS}_PENDING`:
+    case `${GET_PRODUCT_DETAIL}_PENDING`:
       return {
         ...state,
         isLoading: true
@@ -29,7 +39,14 @@ export default function shopReducer(state = initialState, action) {
         isLoading: false,
         products: payload.data
       };
+    case `${GET_PRODUCT_DETAIL}_FULFILLED`:
+      return {
+        ...state,
+        isLoading: false,
+        product: payload.data
+      };
     case `${GET_PRODUCTS}_REJECTED`:
+    case `${GET_PRODUCT_DETAIL}_REJECTED`:
       return {
         ...state,
         isLoading: false,
