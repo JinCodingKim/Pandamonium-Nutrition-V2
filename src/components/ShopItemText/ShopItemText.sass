@@ -1,0 +1,90 @@
+@import '../../guide.sass'
+
+
+// Title and Price properties & transition of it going up with the small info opening
+.item-title-price-open, .item-title-price-close
+    position: absolute
+    z-index: 2
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    font-weight: 700
+    background-color: $light-grey
+    transition: all 0.5s $zoom
+
+    & > h5
+        font-size: 17.5px
+        margin: 0
+    
+    & > h6
+        font-size: 15px
+        margin: 0
+        color: $orange
+
+.item-title-price-close
+    padding: 0 20px 5px 20px
+    height: 30px
+    bottom: 114px
+    border-top: 1px solid transparent
+
+.item-title-price-open
+    padding: 5px 20px 5px 20px
+    height: 45px
+    bottom: 189px
+    border-top: $card
+    
+
+// Small info opening icon & transition of it going up with the small info opening
+.item-icon-open, .item-icon-close
+    position: absolute
+    z-index: 2
+    width: 100%
+    height: 25px
+    padding: 0 30px 0 30px 5px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.35)
+    display: flex
+    justify-content: center
+    background-color: $light-grey
+    transition: bottom 0.5s $zoom
+
+.item-icon-close
+    bottom: 89px
+
+.item-icon-open
+    bottom: 165px
+
+.item-close, .item-open
+    cursor: pointer
+
+.item-close
+    transform: rotate(180deg)
+    transform-origin: 50% 50%
+
+
+// Info properties & transition of it going up when activated
+#open-info, #close-info
+    position: absolute
+    z-index: 1
+    padding: 10px 20px
+    height: 70px
+    width: 100%
+    background-color: $light-grey
+    transition: all 0.5s $zoom
+
+    & > p
+        margin: 0
+        height: 100%
+        font-size: 12px
+    
+#close-info
+    top: 280px
+
+    & > p
+        color: $light-grey
+
+#open-info
+    top: 235px
+
+    & > p
+        color: rgba($black, 0.5)

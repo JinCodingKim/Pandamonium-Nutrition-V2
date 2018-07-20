@@ -1,0 +1,51 @@
+.item-buttons {
+  position: relative;
+  z-index: 2;
+  top: 60px;
+  padding: 15px;
+  width: 100%;
+  background-color: #EEEEEE;
+  display: flex;
+  flex-wrap: nowrap; }
+  .item-buttons button {
+    transition: all 0.25s;
+    height: 60px;
+    width: 100%;
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+    cursor: pointer; }
+    .item-buttons button svg {
+      width: 12.5px;
+      height: 12.5px;
+      margin: 2.5px 10px 0 0; }
+  .item-buttons a:first-child {
+    width: calc(65% - 4px); }
+    .item-buttons a:first-child > button:hover {
+      background-color: #4169E1;
+      border: 2px solid #4169E1; }
+    .item-buttons a:first-child > button {
+      background-color: #FF6D00;
+      border: 2px solid #FF6D00;
+      color: #EEEEEE;
+      fill: #EEEEEE; }
+  .item-buttons a:last-child {
+    width: 35%; }
+    .item-buttons a:last-child > button:hover {
+      border: 2px solid #FF6D00;
+      color: #FF6D00; }
+      .item-buttons a:last-child > button:hover > svg path {
+        fill: #FF6D00; }
+    .item-buttons a:last-child > button {
+      background-color: transparent;
+      border: 2px solid rgba(33, 33, 33, 0.25);
+      color: rgba(33, 33, 33, 0.5);
+      margin-left: 4px; }
+      .item-buttons a:last-child > button > svg path {
+        transition: fill 0.25s;
+        fill: rgba(33, 33, 33, 0.5); }
+
+/*# sourceMappingURL=ShopItemButtons.css.map */

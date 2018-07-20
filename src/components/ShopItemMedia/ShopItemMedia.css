@@ -1,15 +1,3 @@
-#item-main {
-  position: relative;
-  width: calc(100% - 35px);
-  height: 400px;
-  background-color: #EEEEEE;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
-
 #images-dots {
   display: flex; }
 
@@ -61,4 +49,4 @@
 .img-off {
   opacity: 0; }
 
-/*# sourceMappingURL=ShopItem.css.map */
+/*# sourceMappingURL=ShopItemMedia.css.map */

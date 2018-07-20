@@ -1,0 +1,65 @@
+@import '../../guide.sass'
+    
+
+// Buttons properties
+.item-buttons
+    position: relative
+    z-index: 2
+    top: 60px
+    padding: 15px
+    width: 100%
+    background-color: $light-grey
+    display: flex
+    flex-wrap: nowrap
+
+    & button
+        transition: all 0.25s
+        height: 60px
+        width: 100%
+        border-radius: 1px
+        display: flex
+        justify-content: center
+        font-weight: 700
+        letter-spacing: 1px
+        font-size: 15px
+        cursor: pointer
+
+        & svg
+            width: 12.5px
+            height: 12.5px
+            margin: 2.5px 10px 0 0
+
+    & a:first-child
+        width: calc(65% - 4px)
+
+        & > button:hover
+            background-color: $blue
+            border: 2px solid $blue
+
+        & > button
+            background-color: $orange
+            border: 2px solid $orange
+            color: $light-grey
+
+            & > svg path
+            fill: $light-grey
+
+    & a:last-child
+        width: 35%
+
+        & > button:hover
+            border: 2px solid $orange
+            color: $orange
+
+            & > svg path
+                fill: $orange
+
+        & > button
+            background-color: transparent
+            border: 2px solid rgba($black, 0.25)
+            color: rgba($black, 0.5)
+            margin-left: 4px
+
+            & > svg path
+                transition: fill 0.25s
+                fill: rgba($black, 0.5)

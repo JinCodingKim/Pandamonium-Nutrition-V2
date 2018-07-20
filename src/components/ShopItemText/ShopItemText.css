@@ -1,0 +1,79 @@
+.item-title-price-open, .item-title-price-close {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  background-color: #EEEEEE;
+  transition: all 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
+  .item-title-price-open > h5, .item-title-price-close > h5 {
+    font-size: 17.5px;
+    margin: 0; }
+  .item-title-price-open > h6, .item-title-price-close > h6 {
+    font-size: 15px;
+    margin: 0;
+    color: #FF6D00; }
+
+.item-title-price-close {
+  padding: 0 20px 5px 20px;
+  height: 30px;
+  bottom: 114px;
+  border-top: 1px solid transparent; }
+
+.item-title-price-open {
+  padding: 5px 20px 5px 20px;
+  height: 45px;
+  bottom: 189px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+.item-icon-open, .item-icon-close {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 25px;
+  padding: 0 30px 0 30px 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  transition: bottom 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
+
+.item-icon-close {
+  bottom: 89px; }
+
+.item-icon-open {
+  bottom: 165px; }
+
+.item-close, .item-open {
+  cursor: pointer; }
+
+.item-close {
+  transform: rotate(180deg);
+  transform-origin: 50% 50%; }
+
+#open-info, #close-info {
+  position: absolute;
+  z-index: 1;
+  padding: 10px 20px;
+  height: 70px;
+  width: 100%;
+  background-color: #EEEEEE;
+  transition: all 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
+  #open-info > p, #close-info > p {
+    margin: 0;
+    height: 100%;
+    font-size: 12px; }
+
+#close-info {
+  top: 280px; }
+  #close-info > p {
+    color: #EEEEEE; }
+
+#open-info {
+  top: 235px; }
+  #open-info > p {
+    color: rgba(33, 33, 33, 0.5); }
+
+/*# sourceMappingURL=ShopItemText.css.map */

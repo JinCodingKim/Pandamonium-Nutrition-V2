@@ -8,6 +8,7 @@ const NavBarDropDown = ({ openMain, openSub, toggleMenu }) => {
   let subShift = openSub ? "open" : "close";
   return (
     <ul id={openMain ? "open-main" : "close-main"}>
+      {/* Main DropDown Menu */}
       <li>
         <Link to="/shop" onClick={newPage}>
           <p className="menu-item">Shop</p>
@@ -19,6 +20,7 @@ const NavBarDropDown = ({ openMain, openSub, toggleMenu }) => {
           alt="Down"
         />
       </li>
+      {/* Sub DropDown Menu */}
       <ul id={`${subShift}-sub`} onClick={newPage}>
         <li>
           <Link to="/shop/supplement">
