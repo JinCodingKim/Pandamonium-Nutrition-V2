@@ -1,0 +1,85 @@
+.sub-nav-container {
+  display: flex; }
+  .sub-nav-container div {
+    margin: 10px; }
+
+.search, .cart {
+  height: 20px;
+  cursor: pointer; }
+  .search > img, .cart > img {
+    height: 100%; }
+
+.search {
+  display: flex;
+  align-items: center; }
+
+#open-search, #close-search {
+  transition: border 0.2s, width 0.2s;
+  background-color: #EEEEEE; }
+
+#open-search {
+  margin-left: 5px;
+  height: 25px;
+  width: 120px;
+  border: 2px solid #212121;
+  padding: 2.5px 5px;
+  font-size: 15px;
+  color: #212121;
+  letter-spacing: 0.5px; }
+  #open-search:focus {
+    border: 2px solid #FF6D00; }
+
+#close-search {
+  margin-left: 0;
+  width: 0px;
+  border: 0px solid transparent; }
+
+#burger-toggle {
+  display: block;
+  position: relative;
+  top: 0;
+  z-index: 3;
+  user-select: none;
+  width: 32px;
+  height: 25px; }
+  #burger-toggle input {
+    display: block;
+    width: 30px;
+    height: 25px;
+    border-radius: 2px;
+    position: absolute;
+    top: -5px;
+    right: -2px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 4; }
+    #burger-toggle input:checked ~ span {
+      opacity: 1;
+      transform: rotate(45deg) translate(1px, -2px); }
+    #burger-toggle input:checked ~ span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2); }
+    #burger-toggle input:checked ~ span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(2px, -1px); }
+  #burger-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #212121;
+    position: absolute;
+    margin-bottom: 6px;
+    z-index: 3;
+    left: 4px;
+    top: 1px;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.68, -1, 0.5, 1.55), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.33s ease-in-out; }
+    #burger-toggle span:nth-last-child(1) {
+      transform-origin: 0% 100%;
+      top: 1px; }
+    #burger-toggle span:nth-last-child(2) {
+      top: 17px; }
+    #burger-toggle span:nth-last-child(3) {
+      transform-origin: 0% 0%;
+      top: 9px; }
+
+/*# sourceMappingURL=NavBarSub.css.map */

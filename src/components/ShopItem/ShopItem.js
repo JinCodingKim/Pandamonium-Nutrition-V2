@@ -1,23 +1,56 @@
 import React, { Component } from "react";
+import ShopItemDotImage from "../ShopItemDotImage/ShopItemDotImage";
 import Down from "../../assets/img/chevron-down.svg";
 import "./ShopItem.css";
 
 class ShopItem extends Component {
+  static defaultProps = {
+    img: []
+  };
   state = {
-    openInfo: false
+    openInfo: false,
+    displayImg: this.props.img[0]
   };
   toggleInfo = () =>
     this.setState(currentState => ({
       openInfo: !currentState.openInfo
     }));
+  handleImg = displayImg => {
+    console.log(displayImg);
+    this.setState({ displayImg });
+  };
   render() {
     const { name, price, img } = this.props;
-    const { openInfo } = this.state;
+    const { openInfo, displayImg } = this.state;
     let shift = openInfo ? "open" : "close";
+    let dot = img.map((dot, i) => (
+      <ShopItemDotImage
+        key={i}
+        dot={dot}
+        displayImg={displayImg}
+        render={dotClass => (
+          <div
+            className={`dot-${dotClass}`}
+            onClick={() => this.handleImg(dot)}
+          />
+        )}
+      />
+    ));
+    let chosenImg = img.map((dot, i) => (
+      <ShopItemDotImage
+        key={i}
+        dot={dot}
+        displayImg={displayImg}
+        render={imgClass => (
+          <img className={`img-${imgClass}`} src={displayImg} alt={name} />
+        )}
+      />
+    ));
     return (
       <section id="item-main">
         <div className={`item-img-${shift}`}>
-          <img src={img} alt={name} />
+          <div id="images-dots">{dot}</div>
+          {chosenImg}
         </div>
         <div className={`item-title-price-${shift}`}>
           <h5>{name}</h5>
@@ -26,7 +59,7 @@ class ShopItem extends Component {
         <div className={`item-icon-${shift}`}>
           <img
             onClick={this.toggleInfo}
-            className={openInfo ? "item-on" : "item-off"}
+            className={`item-${shift}`}
             src={Down}
             alt="Down"
           />

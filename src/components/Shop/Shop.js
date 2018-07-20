@@ -14,18 +14,16 @@ class Shop extends Component {
   }
   render() {
     console.log(this.state);
-    let productsList = this.state.products.map(
-      ({ product_id, product_name, product_price, product_img }) => {
-        return (
-          <ShopItem
-            key={product_id}
-            name={product_name}
-            price={product_price}
-            img={product_img}
-          />
-        );
-      }
-    );
+    let productsList = this.state.products
+      .sort((a, b) => b.product_category.localeCompare(a.product_category))
+      .map(({ product_id, product_name, product_price, img_list }) => (
+        <ShopItem
+          key={product_id}
+          name={product_name}
+          price={product_price}
+          img={img_list}
+        />
+      ));
     return <div id="shop-main">{productsList}</div>;
   }
 }

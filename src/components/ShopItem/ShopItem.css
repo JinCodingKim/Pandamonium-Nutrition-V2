@@ -1,7 +1,7 @@
 #item-main {
   position: relative;
   width: calc(100% - 35px);
-  height: 372.5px;
+  height: 387.5px;
   background-color: #EEEEEE;
   margin-bottom: 20px;
   display: flex;
@@ -10,16 +10,33 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
 
+#images-dots {
+  display: flex; }
+
+.dot-on, .dot-off {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background-color 0.5s ease;
+  z-index: 2; }
+
+.dot-on {
+  background-color: #4169E1; }
+
+.dot-off {
+  background-color: rgba(33, 33, 33, 0.5); }
+
 .item-img-open, .item-img-close {
   position: relative;
+  padding-top: 15px;
   z-index: 1;
-  height: 220px;
+  height: 250px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   transition: all 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
-  .item-img-open > img, .item-img-close > img {
-    height: 100%; }
 
 .item-img-open {
   opacity: 0.2;
@@ -27,6 +44,22 @@
 
 .item-img-close {
   opacity: 1; }
+
+.img-on, .img-off {
+  height: 225px;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: opacity 0.5s; }
+
+.img-on {
+  opacity: 1; }
+
+.img-off {
+  opacity: 0; }
 
 .item-title-price-open, .item-title-price-close {
   position: absolute;
@@ -76,10 +109,10 @@
 .item-icon-open {
   bottom: 165px; }
 
-.item-off, .item-on {
+.item-close, .item-open {
   cursor: pointer; }
 
-.item-off {
+.item-close {
   transform: rotate(180deg);
   transform-origin: 50% 50%; }
 
@@ -90,23 +123,26 @@
   height: 70px;
   width: 100%;
   background-color: #EEEEEE;
-  transition: top 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
+  transition: all 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
   #open-info > p, #close-info > p {
     margin: 0;
     height: 100%;
-    font-size: 12px;
-    color: rgba(33, 33, 33, 0.5); }
+    font-size: 12px; }
 
 #close-info {
   top: 276px; }
+  #close-info > p {
+    color: #EEEEEE; }
 
 #open-info {
-  top: 206px; }
+  top: 222px; }
+  #open-info > p {
+    color: rgba(33, 33, 33, 0.5); }
 
 .item-buttons {
   position: relative;
   z-index: 2;
-  top: 62px;
+  top: 47px;
   padding: 15px;
   width: 100%;
   background-color: #EEEEEE;
