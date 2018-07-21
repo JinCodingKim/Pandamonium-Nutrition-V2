@@ -18,7 +18,29 @@ class ShopItem extends Component {
     let shift = openInfo ? "open" : "close";
     return (
       <section id="item-main">
-        <ShopItemMedia img={img} shift={shift} />
+        <ShopItemMedia img={img}>
+          {({ displayImg, handleImg }) => (
+            <div className={`item-img-${shift}`}>
+              <div id="images-dots">
+                {img.map((dot, i) => (
+                  <div
+                    key={i}
+                    className={displayImg === dot ? "dot-on" : "dot-off"}
+                    onClick={() => handleImg(dot)}
+                  />
+                ))}
+              </div>
+              {img.map((dot, i) => (
+                <img
+                  key={i}
+                  className={displayImg === dot ? "img-on" : "img-off"}
+                  src={displayImg}
+                  alt="Product"
+                />
+              ))}
+            </div>
+          )}
+        </ShopItemMedia>
         <ShopItemText
           name={name}
           price={price}

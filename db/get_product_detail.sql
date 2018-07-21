@@ -4,7 +4,8 @@ p.product_header,
 p.product_description,
 p.product_price,
 array[[p.product_icon1_img, p.product_icon1_tag], [p.product_icon2_img, p.product_icon2_tag], [p.product_icon3_img, p.product_icon3_tag]] as icons,
-array_agg(array[r.product_img, v.product_type_variation]) as img_to_type
+array_agg(DISTINCT(r.product_img)) as img_list,
+array_agg(v.product_type_variation) as product_variation
 FROM products p
 JOIN productcategories c
 ON p.category_id = c.category_id
