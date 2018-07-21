@@ -9,7 +9,7 @@ class ProductDetail extends Component {
   }
   render() {
     console.log(this.props.product);
-    return <div className="">ProductDetail</div>;
+    return <div id="detail-main" />;
   }
 }
 const mapStateToProps = state => ({ ...state.shopReducer });

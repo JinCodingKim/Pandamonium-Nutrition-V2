@@ -3,9 +3,7 @@ p.product_name,
 p.product_header,
 p.product_description,
 p.product_price,
-array[p.product_icon1_img, p.product_icon1_tag] as icon1,
-array[p.product_icon2_img, p.product_icon2_tag] as icon2,
-array[p.product_icon3_img, p.product_icon3_tag] as icon3,
+array[[p.product_icon1_img, p.product_icon1_tag], [p.product_icon2_img, p.product_icon2_tag], [p.product_icon3_img, p.product_icon3_tag]] as icons,
 array_agg(array[r.product_img, v.product_type_variation]) as img_to_type
 FROM products p
 JOIN productcategories c

@@ -13,6 +13,7 @@ class Shop extends Component {
       this.props.getProducts(this.props.match.params.type);
   }
   render() {
+    console.log(this.props.products);
     let productsList = this.props.products
       .sort((a, b) => b.product_category.localeCompare(a.product_category))
       .map(({ product_id, product_name, product_price, img_list }) => (
