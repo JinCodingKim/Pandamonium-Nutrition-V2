@@ -34,7 +34,7 @@ class ShopItem extends Component {
                 <img
                   key={i}
                   className={displayImg === dot ? "img-on" : "img-off"}
-                  src={displayImg}
+                  src={dot}
                   alt="Product"
                 />
               ))}

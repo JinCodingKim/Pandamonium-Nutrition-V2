@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./ShopItemMedia.css";
 
 class ShopItemMedia extends Component {
@@ -14,8 +14,9 @@ class ShopItemMedia extends Component {
     handleImg: this.handleImg
   });
   render() {
-    const { img, children } = this.props;
-    const { displayImg } = this.state;
+    console.log(this.state);
+    console.log(this.props);
+    const { children } = this.props;
     return children(this.getStateAndHelpers());
   }
 }

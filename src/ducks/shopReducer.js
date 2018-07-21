@@ -7,7 +7,7 @@ const initialState = {
   isLoading: false,
   isError: "",
   products: [],
-  product: []
+  product: {}
 };
 
 export function getProducts(type) {
