@@ -9,25 +9,35 @@ class ProductDetail extends Component {
     this.props.getProductDetail(this.props.match.params.name);
   }
   render() {
-    console.log(this.props.product);
-    const { product } = this.props;
-    // const imgExists = product && product.img_list;
+    const { product, isLoading } = this.props;
+    const images = product.img_list;
+    if (isLoading || !Object.keys(product).length) return <div>Loading...</div>;
     return (
       <div id="detail-main">
-        <ShopItemMedia img={product.img_list}>
+        <ShopItemMedia img={images}>
           {({ displayImg, handleImg }) => (
             <div className="detail-img">
-              {console.log(displayImg)}
-              {product.img_list.map((dot, i) => (
+              {images.map((image, i) => (
                 <img
                   key={i}
-                  // className={
-                  //   displayImg === dot ? "detail-img-on" : "detail-img-off"
-                  // }
-                  src={dot}
+                  className={
+                    displayImg === image ? "detail-img-on" : "detail-img-off"
+                  }
+                  src={image}
                   alt="Product"
                 />
               ))}
+              <div id="detail-images-dots">
+                {images.map((dot, i) => (
+                  <div
+                    key={i}
+                    className={
+                      displayImg === dot ? "detail-dot-on" : "detail-dot-off"
+                    }
+                    onClick={() => handleImg(dot)}
+                  />
+                ))}
+              </div>
             </div>
           )}
         </ShopItemMedia>

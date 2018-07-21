@@ -13,16 +13,16 @@ class ShopItem extends Component {
       openInfo: !currentState.openInfo
     }));
   render() {
-    const { name, price, img } = this.props;
+    const { name, price, images } = this.props;
     const { openInfo } = this.state;
     let shift = openInfo ? "open" : "close";
     return (
       <section id="item-main">
-        <ShopItemMedia img={img}>
+        <ShopItemMedia img={images}>
           {({ displayImg, handleImg }) => (
             <div className={`item-img-${shift}`}>
               <div id="images-dots">
-                {img.map((dot, i) => (
+                {images.map((dot, i) => (
                   <div
                     key={i}
                     className={displayImg === dot ? "dot-on" : "dot-off"}
@@ -30,11 +30,11 @@ class ShopItem extends Component {
                   />
                 ))}
               </div>
-              {img.map((dot, i) => (
+              {images.map((image, i) => (
                 <img
                   key={i}
-                  className={displayImg === dot ? "img-on" : "img-off"}
-                  src={dot}
+                  className={displayImg === image ? "img-on" : "img-off"}
+                  src={image}
                   alt="Product"
                 />
               ))}

@@ -14,10 +14,7 @@ class ShopItemMedia extends Component {
     handleImg: this.handleImg
   });
   render() {
-    console.log(this.state);
-    console.log(this.props);
-    const { children } = this.props;
-    return children(this.getStateAndHelpers());
+    return this.props.children(this.getStateAndHelpers());
   }
 }
 export default ShopItemMedia;

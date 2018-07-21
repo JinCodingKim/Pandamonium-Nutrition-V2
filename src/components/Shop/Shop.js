@@ -21,7 +21,7 @@ class Shop extends Component {
           key={product_id}
           name={product_name}
           price={product_price}
-          img={img_list}
+          images={img_list}
         />
       ));
     return <div id="shop-main">{productsList}</div>;
