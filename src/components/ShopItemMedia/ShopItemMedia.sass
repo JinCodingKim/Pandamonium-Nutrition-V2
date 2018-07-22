@@ -1,7 +1,21 @@
 @import '../../guide.sass'
 
 
-// Dots properties
+    
+// Transition of image opacity when opening up item small info for Shop Page
+.item-img-open, .item-img-close
+    position: relative
+    padding-top: 15px
+    z-index: 1
+    height: 250px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    transition: all 0.5s $zoom
+
+
+// Dots properties for Shop Page
 #images-dots
     display: flex
 
@@ -18,40 +32,66 @@
 
 .dot-off
     background-color: rgba($black, 0.5)
-    
-    
-// Image properties & transition of image opacity when opening up item small info
-.item-img-open, .item-img-close
-    position: relative
-    padding-top: 15px
-    z-index: 1
-    height: 250px
-    width: 100%
-    display: flex
-    flex-direction: column
-    align-items: center
-    transition: all 0.5s $zoom
 
 
+// Image properties for Shop Page
 .item-img-open
     opacity: 0.2
-    background-color: rgba(0,0,0,0.5)    
+    background-color: rgba($black,0.25)    
 
 .item-img-close
     opacity: 1
-
+    
 .img-on, .img-off
     height: 225px
     z-index: 1
-    position: absolute
     bottom: 0
+
+
+// Shared image properties for Shop & Detail Page
+.img-on, .img-off, .detail-img-on, .detail-img-off
+    position: absolute
     left: 0
     right: 0
     margin: auto
     transition: opacity 0.5s
 
-.img-on
+
+.img-on,.detail-img-on
     opacity: 1
 
-.img-off
+.img-off,.detail-img-off
     opacity: 0
+
+
+// Image properties & transition of image for Detail Page
+.detail-img
+    height: 480px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.detail-img-on, .detail-img-off
+    width: 300px
+    top: 65px
+
+
+// Dots properties for Detail Page
+.detail-dot-on,.detail-dot-off
+    margin: 420px 5px 0 5px
+    height: 55px
+    width: 55px
+    border-radius: 50%
+    object-fit: cover
+    padding: 1px
+    cursor: pointer
+    transition: all 0.5s
+
+.detail-dot-off
+    border: 2px solid rgba($black, 0.25)
+    box-shadow: none
+
+.detail-dot-on
+    border: 2px solid $blue
+    box-shadow: $active-shadow
