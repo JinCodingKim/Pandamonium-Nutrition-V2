@@ -1,9 +1,9 @@
 SELECT 
-c.product_category, 
-p.product_id, 
-p.product_name, 
-p.product_price, 
-array_agg(DISTINCT(r.product_img)) AS img_list
+c.product_category as category, 
+p.product_id as id, 
+p.product_name as name, 
+p.product_price as price, 
+array_agg(DISTINCT(r.product_img)) AS images
 FROM products p
 JOIN productcategories c 
 ON p.category_id = c.category_id

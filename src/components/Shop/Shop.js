@@ -15,14 +15,9 @@ class Shop extends Component {
   render() {
     console.log(this.props.products);
     let productsList = this.props.products
-      .sort((a, b) => b.product_category.localeCompare(a.product_category))
-      .map(({ product_id, product_name, product_price, img_list }) => (
-        <ShopItem
-          key={product_id}
-          name={product_name}
-          price={product_price}
-          images={img_list}
-        />
+      .sort((a, b) => b.category.localeCompare(a.category))
+      .map(({ id, name, price, images }) => (
+        <ShopItem key={id} name={name} price={price} images={images} />
       ));
     return <div id="shop-main">{productsList}</div>;
   }

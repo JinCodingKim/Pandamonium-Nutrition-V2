@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getProductDetail } from "../../ducks/shopReducer";
 import ShopItemMedia from "../ShopItemMedia/ShopItemMedia";
-// import ProductDetailTitle from '../ProductDetailTitle/ProductDetailTitle';
-import Pandamonium from "../../assets/img/pandamonium.svg";
+import ProductDetailTitle from "../ProductDetailTitle/ProductDetailTitle";
 import "./ProductDetail.css";
 
 class ProductDetail extends Component {
@@ -16,19 +15,20 @@ class ProductDetail extends Component {
     if (isLoading || !Object.keys(product).length) return <div>Loading...</div>;
     const {
       icons,
-      img_list,
-      product_description,
-      product_header,
-      product_name,
-      product_price,
-      product_variation
+      images,
+      description,
+      header,
+      name,
+      price,
+      variations,
+      itemtype
     } = this.props.product;
     return (
       <div id="detail-main">
-        <ShopItemMedia img={img_list}>
+        <ShopItemMedia img={images}>
           {({ displayImg, handleImg }) => (
             <div className="detail-img">
-              {img_list.map((image, i) => (
+              {images.map((image, i) => (
                 <img
                   key={i}
                   className={
@@ -39,7 +39,7 @@ class ProductDetail extends Component {
                 />
               ))}
               <div id="detail-images-dots">
-                {img_list.map((dot, i) => (
+                {images.map((dot, i) => (
                   <img
                     key={i}
                     className={
@@ -54,11 +54,9 @@ class ProductDetail extends Component {
             </div>
           )}
         </ShopItemMedia>
-        <div id="detail-title">
-          <img src={Pandamonium} alt="Pandamonium" />
-          <h1>{product_name}</h1>
-        </div>
-        {/* <ProductDetailTitle /> */}
+        <ProductDetailTitle name={name} itemtype={itemtype} icons={icons} />
+        <button id="detail-cart-button">Add To Cart</button>
+        <div className="detail-header-description" />
       </div>
     );
   }

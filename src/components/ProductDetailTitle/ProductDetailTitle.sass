@@ -1,0 +1,67 @@
+@import '../../guide.sass'
+
+    
+#detail-title 
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 45px 0 15px 0
+    width: calc(100% - 35px)
+    text-transform: uppercase
+
+    & > img
+        width: 45px
+        opacity: 0.85
+
+    & > h1
+        text-align: center
+        font-family: $open-sans
+        margin: 15px 0 0 0
+        font-size: 45px
+        font-weight: 900
+        letter-spacing: -4px
+        line-height: 40px
+
+    & > p
+        font-size: 15px
+        font-weight: 600
+        letter-spacing: 0.5px
+        color: rgba($black, 0.5)
+
+.detail-icons
+    display: flex
+    justify-content: space-between
+    width: calc(100% - 35px)
+
+.icon-tag
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100px
+
+    & > img
+        border-radius: 50%
+        border: 2px solid transparent
+        height: 55px
+        box-shadow: none
+        transition: all 0.5s
+
+        &:hover
+            box-shadow: $active-shadow
+            border: 2px solid $orange
+
+    & > p
+        font-size: 10px
+        font-weight: 600
+        letter-spacing: 0.5px
+        transition: color 0.5s
+        text-align: center
+
+.tag-on
+    color: $black
+
+.tag-off
+    color: transparent
+
+.no-icon
+    height: 25px

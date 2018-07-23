@@ -4,6 +4,7 @@ import "./ShopItemButtons.css";
 
 const ShopItemButtons = ({ name }) => (
   <div className="item-buttons">
+    {/* maybe lead to a modal to selecte quantity and flavors first?? */}
     <Link to="/cart">
       <button>
         <svg
