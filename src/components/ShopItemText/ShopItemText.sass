@@ -4,7 +4,7 @@
 // Title and Price properties & transition of it going up with the small info opening
 .item-title-price-open, .item-title-price-close
     position: absolute
-    z-index: 2
+    z-index: 1
     display: flex
     justify-content: space-between
     align-items: center
@@ -31,14 +31,14 @@
 .item-title-price-open
     padding: 5px 20px 5px 20px
     height: 45px
-    bottom: 189px
+    bottom: 173px
     border-top: $card
     
 
 // Small info opening icon & transition of it going up with the small info opening
 .item-icon-open, .item-icon-close
     position: absolute
-    z-index: 2
+    z-index: 1
     width: 100%
     height: 25px
     padding: 0 30px 0 30px 5px
@@ -52,7 +52,7 @@
     bottom: 89px
 
 .item-icon-open
-    bottom: 165px
+    bottom: 148px
 
 .item-close, .item-open
     cursor: pointer
@@ -65,7 +65,7 @@
 // Info properties & transition of it going up when activated
 #open-info, #close-info
     position: absolute
-    z-index: 1
+    z-index: 0
     padding: 10px 20px
     height: 70px
     width: 100%
@@ -84,7 +84,7 @@
         color: $light-grey
 
 #open-info
-    top: 235px
+    top: 250px
 
     & > p
         color: rgba($black, 0.5)

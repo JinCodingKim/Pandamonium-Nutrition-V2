@@ -11,7 +11,7 @@
     // background: linear-gradient(-225deg, rgba($orange, 0.5), rgba($orange, 0.5) 50%, rgba($light-grey, 0.5) 50%, rgba($light-grey, 0.5) 100%)
 
 
-#detail-cart-button
+#detail-cart-button, #detail-description-tab
     transition: all 0.25s
     height: 50px
     width: calc(100% - 35px)
@@ -20,8 +20,50 @@
     letter-spacing: 1px
     font-size: 15px
     cursor: pointer
+
+    & svg 
+        height: 15px
+    // box-shadow: $active-shadow
+
+#detail-cart-button
     background-color: $orange
     color: $light-grey
 
     &:hover
         background-color: $blue
+
+
+#detail-description-tab
+    background-color: $light-grey
+    color: rgba($black, 0.5)
+    border: 2px solid rgba($black, 0.25)
+    // box-shadow: $active-shadow
+    margin-top: 10px
+
+    &:hover
+        border: 2px solid $orange
+        color: $orange
+
+.detail-header-description
+    width: calc(100% - 35px)
+    margin: 50px 0
+
+    & > h2
+        font-family: $open-sans
+        font-size: 25px
+        font-weight: 500
+        letter-spacing: 0.5px
+        line-height: 30px
+        width: 100%
+        margin: 0
+        padding-bottom: 10px
+        border-bottom: 3px solid $blue
+
+        & > span
+            padding-left: 1px
+            text-transform: uppercase
+            font-weight: 900
+            letter-spacing: -0.5px
+
+    & > p
+        

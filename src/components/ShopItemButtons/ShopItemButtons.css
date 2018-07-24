@@ -1,6 +1,6 @@
 .item-buttons {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   top: 60px;
   padding: 15px;
   width: 100%;

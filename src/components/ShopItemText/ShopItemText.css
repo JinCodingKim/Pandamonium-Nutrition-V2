@@ -1,6 +1,6 @@
 .item-title-price-open, .item-title-price-close {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,12 +25,12 @@
 .item-title-price-open {
   padding: 5px 20px 5px 20px;
   height: 45px;
-  bottom: 189px;
+  bottom: 173px;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 .item-icon-open, .item-icon-close {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height: 25px;
   padding: 0 30px 0 30px 5px;
@@ -44,7 +44,7 @@
   bottom: 89px; }
 
 .item-icon-open {
-  bottom: 165px; }
+  bottom: 148px; }
 
 .item-close, .item-open {
   cursor: pointer; }
@@ -55,7 +55,7 @@
 
 #open-info, #close-info {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   padding: 10px 20px;
   height: 70px;
   width: 100%;
@@ -72,7 +72,7 @@
     color: #EEEEEE; }
 
 #open-info {
-  top: 235px; }
+  top: 250px; }
   #open-info > p {
     color: rgba(33, 33, 33, 0.5); }
 

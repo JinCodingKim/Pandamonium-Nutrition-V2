@@ -18,7 +18,7 @@
   border-radius: 50%;
   margin: 0 5px;
   transition: background-color 0.5s ease;
-  z-index: 2; }
+  z-index: 1; }
 
 .dot-on {
   background-color: #4169E1; }
