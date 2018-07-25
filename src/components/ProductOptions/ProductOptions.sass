@@ -1,0 +1,98 @@
+@import '../../guide.sass'
+
+
+// Actual cart options of the product once the button is clicked
+#detail-cart-on, #detail-cart-off
+    width: 100%
+    transition: all 0.5s cubic-bezier(0, 1, 0.5, 1)
+    background-color: $light-grey
+    overflow-y: hidden
+    display: flex
+    flex-direction: column
+
+    & label
+        margin-bottom: 15px
+
+    & label, & > input
+        font-weight: 600
+        font-size: 15px
+        letter-spacing: 0.5px
+        
+    & > label:nth-child(1) > p, & > label:nth-child(2) input, & > label:nth-child(3) input
+        border-radius: 1px
+        font-weight: 400
+        font-size: 15px
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 10px 5px
+
+    & > label:nth-child(1) > p, & > label:nth-child(2) input
+        padding: 5px 15px
+        min-height: 40px
+
+    & label:nth-child(1) > p, .variation-on, label:nth-child(3) input:last-child
+        background-color: $blue
+        color: $light-grey
+        box-shadow: $active-shadow
+
+    & > label:nth-child(1) > p
+        width: 85px
+
+    & > input
+        background-color: $orange
+        color: $light-grey
+        height: 50px
+        cursor: pointer
+        box-shadow: none
+        transition: all 0.25s
+
+        &:hover
+            box-shadow: $active-shadow
+            background-color: $blue
+
+#detail-cart-off
+    max-height: 0
+    padding: 0
+
+#detail-cart-on
+    max-height: 400px
+    padding: 15px 20px
+
+.options-variations
+    display: flex
+
+.variation-on, .variation-off
+    cursor: pointer
+    height: 40px
+    transition: all 0.25s
+
+.variation-off
+    background-color: $grey
+    color: $light-grey
+    box-shadow: none
+
+.options-quantity
+    display: flex
+    align-items: center
+
+    & input, & p
+        width: 35px
+        height: 35px
+
+    & p
+        text-align: center
+        line-height: 35px
+
+    & input
+        cursor: pointer
+
+    & input:first-child
+        background-color: $grey
+        color: $light-grey
+        font-size: 40px
+        line-height: 20px
+
+    & input:last-child
+        font-size: 25px
+    

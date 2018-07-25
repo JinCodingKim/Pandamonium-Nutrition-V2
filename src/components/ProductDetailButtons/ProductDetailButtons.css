@@ -1,0 +1,94 @@
+.detail-button {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px; }
+  .detail-button > button {
+    position: relative;
+    z-index: 2;
+    transition: all 0.25s;
+    height: 50px;
+    width: 100%;
+    border-radius: 1px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative; }
+    .detail-button > button svg {
+      height: 20px;
+      position: absolute;
+      right: 15px; }
+
+#detail-cart-button-off, #detail-cart-button-on {
+  transition: all 0.5s; }
+
+#detail-cart-button-off {
+  background-color: #FF6D00;
+  color: #EEEEEE; }
+  #detail-cart-button-off > svg {
+    fill: #EEEEEE; }
+  #detail-cart-button-off:hover {
+    background-color: #4169E1; }
+
+#detail-cart-button-on {
+  background-color: #4169E1;
+  color: #EEEEEE; }
+  #detail-cart-button-on > svg {
+    fill: #EEEEEE; }
+
+#detail-description-tab-off, #detail-description-tab-on {
+  background-color: #FAFAFA;
+  color: rgba(33, 33, 33, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.5s; }
+  #detail-description-tab-off > svg, #detail-description-tab-on > svg {
+    fill: rgba(33, 33, 33, 0.5); }
+  #detail-description-tab-off:hover, #detail-description-tab-on:hover {
+    color: #FF6D00; }
+    #detail-description-tab-off:hover > svg, #detail-description-tab-on:hover > svg {
+      fill: #FF6D00; }
+
+#detail-description-tab-on > svg {
+  transform: rotate(180deg);
+  transform-origin: 50% 50%; }
+
+.header-description-on, .header-description-off {
+  width: 100%;
+  transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
+  padding: 15px 20px;
+  background-color: #EEEEEE;
+  overflow-y: hidden; }
+
+.header-description-off {
+  max-height: 0; }
+  .header-description-off > h2, .header-description-off p {
+    opacity: 0.5; }
+
+.header-description-on {
+  max-height: 800px; }
+  .header-description-on > h2 {
+    opacity: 1;
+    font-family: "Open Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #4169E1; }
+    .header-description-on > h2 > span {
+      padding-left: 1px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: -0.5px; }
+  .header-description-on > p {
+    color: rgba(33, 33, 33, 0.65);
+    text-indent: 20px;
+    opacity: 1;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    line-height: 20px; }
+
+/*# sourceMappingURL=ProductDetailButtons.css.map */

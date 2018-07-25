@@ -1,4 +1,5 @@
 import React from "react";
+
 export const PlusIcon = () => (
   <svg
     version="1.1"

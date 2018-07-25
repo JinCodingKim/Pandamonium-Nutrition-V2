@@ -23,7 +23,8 @@ class ProductDetail extends Component {
       name,
       price,
       variations,
-      itemtype
+      itemtype,
+      category
     } = product;
     let formattedHeader = header
       .split(" ")
@@ -69,6 +70,9 @@ class ProductDetail extends Component {
           cartCheck={true}
           title={"Add To Cart"}
           icon={PlusIcon}
+          variations={variations}
+          price={price}
+          category={category}
         />
         <ProductDetailButtons
           id={"detail-description-tab"}

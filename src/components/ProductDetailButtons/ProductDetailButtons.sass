@@ -1,0 +1,119 @@
+@import '../../guide.sass'
+
+    
+// Buttons general properties
+.detail-button
+    position: relative
+    width: 100%
+    margin-bottom: 10px
+
+    & > button 
+        position: relative
+        z-index: 2
+        transition: all 0.25s
+        height: 50px
+        width: 100%
+        border-radius: 1px
+        font-weight: 700
+        letter-spacing: 1px
+        font-size: 15px
+        cursor: pointer
+        position: relative
+
+        & svg 
+            height: 20px
+            position: absolute
+            right: 15px
+
+
+
+// Product Cart Button and its properties
+#detail-cart-button-off, #detail-cart-button-on
+    transition: all 0.5s
+   
+#detail-cart-button-off
+    background-color: $orange
+    color: $light-grey
+
+    & > svg
+        fill: $light-grey
+
+    &:hover
+        background-color: $blue
+
+#detail-cart-button-on
+    background-color: $blue    
+    color: $light-grey
+
+    & > svg
+        fill: $light-grey
+
+
+
+
+// Product Description Button and its properties
+#detail-description-tab-off, #detail-description-tab-on
+    background-color: $white
+    color: rgba($black, 0.5)
+    border-top: $card
+    border-bottom: $card
+    transition: all 0.5s
+
+    & > svg
+        fill: rgba($black, 0.5)
+
+    &:hover
+        color: $orange
+
+        & > svg
+            fill: $orange
+
+#detail-description-tab-on > svg
+    transform: rotate(180deg)
+    transform-origin: 50% 50%
+
+
+
+// Actual descriptions of the product once the button is clicked
+.header-description-on, .header-description-off
+    width: 100%
+    transition: all 0.5s cubic-bezier(0, 1, 0.5, 1)
+    padding: 15px 20px
+    background-color: $light-grey
+    overflow-y: hidden
+
+.header-description-off
+    max-height: 0
+
+    & > h2, p
+        opacity: .5
+
+
+.header-description-on
+    max-height: 800px
+
+    & > h2
+        opacity: 1
+        font-family: $open-sans
+        font-size: 25px
+        font-weight: 500
+        letter-spacing: 0.5px
+        line-height: 30px
+        width: 100%
+        margin: 0
+        padding-bottom: 15px
+        border-bottom: 3px solid $blue
+
+        & > span
+            padding-left: 1px
+            text-transform: uppercase
+            font-weight: 900
+            letter-spacing: -0.5px
+
+    & > p
+        color: rgba($black, 0.65)
+        text-indent: 20px
+        opacity: 1
+        font-size: 15px
+        letter-spacing: 0.5px
+        line-height: 20px

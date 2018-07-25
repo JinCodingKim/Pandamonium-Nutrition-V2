@@ -7,49 +7,4 @@
   align-items: center;
   background-color: #EEEEEE; }
 
-.detail-button {
-  position: relative;
-  width: calc(100% - 35px);
-  margin-bottom: 10px; }
-
-#detail-cart-button, #detail-description-tab {
-  position: relative;
-  z-index: 2;
-  transition: all 0.25s;
-  height: 50px;
-  width: 100%;
-  border-radius: 1px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 15px;
-  cursor: pointer;
-  position: relative; }
-  #detail-cart-button svg, #detail-description-tab svg {
-    height: 20px;
-    position: absolute;
-    right: 15px; }
-
-#detail-cart-button {
-  background-color: #FF6D00;
-  color: #EEEEEE;
-  border: 2px solid #FF6D00; }
-  #detail-cart-button > svg {
-    fill: #EEEEEE; }
-  #detail-cart-button:hover {
-    background-color: #4169E1;
-    border: 2px solid #4169E1; }
-
-#detail-description-tab {
-  background-color: #EEEEEE;
-  color: rgba(33, 33, 33, 0.5);
-  border: 2px solid rgba(33, 33, 33, 0.25); }
-  #detail-description-tab > svg {
-    fill: rgba(33, 33, 33, 0.5);
-    transition: fill 0.25s; }
-  #detail-description-tab:hover {
-    border: 2px solid #FF6D00;
-    color: #FF6D00; }
-    #detail-description-tab:hover > svg {
-      fill: #FF6D00; }
-
 /*# sourceMappingURL=ProductDetail.css.map */

@@ -53,10 +53,11 @@
 
 .detail-img {
   height: 480px;
-  width: calc(100% - 35px);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  background: linear-gradient(to bottom right, rgba(255, 109, 0, 0.9), rgba(255, 109, 0, 0.9) 50%, #EEEEEE 50%, #EEEEEE 100%); }
 
 .detail-img-on, .detail-img-off {
   width: 300px;
