@@ -60,7 +60,7 @@ class ProductOptions extends Component {
               className="options-cancel"
               type="button"
               value="Cancel"
-              onClick={() => handleModal("")}
+              onClick={handleModal}
             />
           )}
           <input className="options-submit" type="submit" value="Confirm" />

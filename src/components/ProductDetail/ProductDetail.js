@@ -12,7 +12,7 @@ class ProductDetail extends Component {
     this.props.getProductDetail(this.props.match.params.name);
   }
   render() {
-    console.log(this.props.product);
+    console.log(this.props);
     const { product, isLoading } = this.props;
     if (isLoading || !Object.keys(product).length) return <div>Loading...</div>;
     const { images } = product;

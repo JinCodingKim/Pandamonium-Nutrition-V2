@@ -23,7 +23,7 @@ class Shop extends Component {
       name
     }));
   render() {
-    console.log(this.props.products, this.state);
+    console.log(this.props.products, this.props.product);
     let productsList = this.props.products
       .sort((a, b) => b.category.localeCompare(a.category))
       .map(({ id, name, price, images }) => (
