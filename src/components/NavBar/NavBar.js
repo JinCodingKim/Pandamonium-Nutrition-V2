@@ -17,7 +17,6 @@ class NavBar extends Component {
       [val2]: false
     }));
   render() {
-    const { openMain, openSub, openSearch } = this.state;
     return (
       <Fragment>
         {/* Main Header */}
@@ -28,18 +27,10 @@ class NavBar extends Component {
             </Link>
           </div>
           {/* Sub Header */}
-          <NavBarSub
-            openMain={openMain}
-            openSearch={openSearch}
-            toggleMenu={this.toggleMenu}
-          />
+          <NavBarSub toggleMenu={this.toggleMenu} {...this.state} />
         </div>
         {/* Dropdown Menu */}
-        <NavBarDropDown
-          openMain={openMain}
-          openSub={openSub}
-          toggleMenu={this.toggleMenu}
-        />
+        <NavBarDropDown toggleMenu={this.toggleMenu} {...this.state} />
       </Fragment>
     );
   }

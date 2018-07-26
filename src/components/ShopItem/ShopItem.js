@@ -13,7 +13,7 @@ class ShopItem extends Component {
       openInfo: !currentState.openInfo
     }));
   render() {
-    const { name, price, images } = this.props;
+    const { name, price, images, cartOn, handleModal } = this.props;
     const { openInfo } = this.state;
     let shift = openInfo ? "open" : "close";
     return (
@@ -47,7 +47,11 @@ class ShopItem extends Component {
           shift={shift}
           toggleInfo={this.toggleInfo}
         />
-        <ShopItemButtons name={name} />
+        <ShopItemButtons
+          name={name}
+          cartOn={cartOn}
+          handleModal={handleModal}
+        />
       </section>
     );
   }

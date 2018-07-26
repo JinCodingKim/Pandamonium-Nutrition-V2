@@ -5,39 +5,42 @@
   overflow-y: hidden;
   display: flex;
   flex-direction: column; }
-  #detail-cart-on label, #detail-cart-off label {
-    margin-bottom: 15px; }
-  #detail-cart-on label, #detail-cart-on > input, #detail-cart-off label, #detail-cart-off > input {
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.5px; }
-  #detail-cart-on > label:nth-child(1) > p, #detail-cart-on > label:nth-child(2) input, #detail-cart-on > label:nth-child(3) input, #detail-cart-off > label:nth-child(1) > p, #detail-cart-off > label:nth-child(2) input, #detail-cart-off > label:nth-child(3) input {
-    border-radius: 1px;
-    font-weight: 400;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 5px; }
-  #detail-cart-on > label:nth-child(1) > p, #detail-cart-on > label:nth-child(2) input, #detail-cart-off > label:nth-child(1) > p, #detail-cart-off > label:nth-child(2) input {
-    padding: 5px 15px;
-    min-height: 40px; }
-  #detail-cart-on label:nth-child(1) > p, #detail-cart-on .variation-on, #detail-cart-on label:nth-child(3) input:last-child, #detail-cart-off label:nth-child(1) > p, #detail-cart-off .variation-on, #detail-cart-off label:nth-child(3) input:last-child {
-    background-color: #4169E1;
-    color: #EEEEEE;
-    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
-  #detail-cart-on > label:nth-child(1) > p, #detail-cart-off > label:nth-child(1) > p {
-    width: 85px; }
-  #detail-cart-on > input, #detail-cart-off > input {
-    background-color: #FF6D00;
-    color: #EEEEEE;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: none;
-    transition: all 0.25s; }
-    #detail-cart-on > input:hover, #detail-cart-off > input:hover {
-      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
-      background-color: #4169E1; }
+
+#shop-cart {
+  background-color: #EEEEEE;
+  border-radius: 1px;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+  #shop-cart > input {
+    width: 100%; }
+
+#detail-cart-on label, #shop-cart label {
+  margin-bottom: 15px; }
+#detail-cart-on label, #detail-cart-on .options-buttons > input, #shop-cart label, #shop-cart .options-buttons > input {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px; }
+#detail-cart-on > label:nth-child(1) > p, #detail-cart-on > label:nth-child(2) input, #detail-cart-on > label:nth-child(3) input, #shop-cart > label:nth-child(1) > p, #shop-cart > label:nth-child(2) input, #shop-cart > label:nth-child(3) input {
+  border-radius: 1px;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 5px; }
+#detail-cart-on > label:nth-child(1) > p, #detail-cart-on > label:nth-child(2) input, #shop-cart > label:nth-child(1) > p, #shop-cart > label:nth-child(2) input {
+  padding: 5px 15px;
+  min-height: 40px; }
+#detail-cart-on label:nth-child(1) > p, #detail-cart-on .variation-on, #detail-cart-on label:nth-child(3) input:last-child, #shop-cart label:nth-child(1) > p, #shop-cart .variation-on, #shop-cart label:nth-child(3) input:last-child {
+  background-color: #4169E1;
+  color: #EEEEEE;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+#detail-cart-on > label:nth-child(1) > p, #shop-cart > label:nth-child(1) > p {
+  width: 85px; }
 
 #detail-cart-off {
   max-height: 0;
@@ -78,5 +81,33 @@
     line-height: 20px; }
   .options-quantity input:last-child {
     font-size: 25px; }
+
+.options-buttons {
+  width: 100%;
+  display: flex;
+  align-items: stretch; }
+  .options-buttons input {
+    height: 50px;
+    flex: 1;
+    cursor: pointer;
+    box-shadow: none;
+    transition: all 0.25s; }
+    .options-buttons input:first-child {
+      margin-right: 5px; }
+    .options-buttons input:last-child {
+      margin-left: 5px; }
+
+.options-cancel {
+  background-color: #BDC5C8;
+  color: #EEEEEE;
+  width: 50%; }
+
+.options-submit {
+  background-color: #FF6D00;
+  color: #EEEEEE;
+  width: auto; }
+  .options-submit:hover {
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    background-color: #4169E1; }
 
 /*# sourceMappingURL=ProductOptions.css.map */

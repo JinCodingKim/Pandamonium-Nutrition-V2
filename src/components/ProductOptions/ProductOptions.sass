@@ -1,7 +1,7 @@
 @import '../../guide.sass'
 
 
-// Actual cart options of the product once the button is clicked
+// Actual cart options of the product once the button is clicked from Product Details or Shop Page
 #detail-cart-on, #detail-cart-off
     width: 100%
     transition: all 0.5s cubic-bezier(0, 1, 0.5, 1)
@@ -10,10 +10,24 @@
     display: flex
     flex-direction: column
 
+#shop-cart
+    background-color: $light-grey
+    border-radius: 1px
+    max-width: 500px
+    min-height: 300px
+    margin: 0 auto
+    padding: 15px
+    border: $card
+    box-shadow: $active-shadow
+
+    & > input 
+        width: 100%
+
+#detail-cart-on, #shop-cart
     & label
         margin-bottom: 15px
 
-    & label, & > input
+    & label, .options-buttons > input
         font-weight: 600
         font-size: 15px
         letter-spacing: 0.5px
@@ -39,17 +53,6 @@
     & > label:nth-child(1) > p
         width: 85px
 
-    & > input
-        background-color: $orange
-        color: $light-grey
-        height: 50px
-        cursor: pointer
-        box-shadow: none
-        transition: all 0.25s
-
-        &:hover
-            box-shadow: $active-shadow
-            background-color: $blue
 
 #detail-cart-off
     max-height: 0
@@ -96,3 +99,35 @@
     & input:last-child
         font-size: 25px
     
+
+.options-buttons
+    width: 100%
+    display: flex
+    align-items: stretch
+
+    & input
+        height: 50px
+        flex: 1
+        cursor: pointer
+        box-shadow: none
+        transition: all 0.25s
+
+        &:first-child
+            margin-right: 5px
+
+        &:last-child
+            margin-left: 5px
+
+.options-cancel
+    background-color: $grey
+    color: $light-grey
+    width: 50%
+
+.options-submit
+    background-color: $orange
+    color: $light-grey
+    width: auto
+
+    &:hover
+        box-shadow: $active-shadow
+        background-color: $blue

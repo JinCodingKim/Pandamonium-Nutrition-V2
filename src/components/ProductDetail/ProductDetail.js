@@ -15,24 +15,7 @@ class ProductDetail extends Component {
     console.log(this.props.product);
     const { product, isLoading } = this.props;
     if (isLoading || !Object.keys(product).length) return <div>Loading...</div>;
-    const {
-      icons,
-      images,
-      description,
-      header,
-      name,
-      price,
-      variations,
-      itemtype,
-      category
-    } = product;
-    let formattedHeader = header
-      .split(" ")
-      .map(
-        (word, i, arr) =>
-          arr.indexOf(word) === 0 ? <span key={i}>{word} </span> : word
-      )
-      .reduce((prev, curr) => [prev, " ", curr]);
+    const { images } = product;
     return (
       <div id="detail-main">
         <ShopItemMedia img={images}>
@@ -64,23 +47,20 @@ class ProductDetail extends Component {
             </div>
           )}
         </ShopItemMedia>
-        <ProductDetailTitle name={name} itemtype={itemtype} icons={icons} />
+        <ProductDetailTitle {...product} />
         <ProductDetailButtons
           id={"detail-cart-button"}
           cartCheck={true}
           title={"Add To Cart"}
           icon={PlusIcon}
-          variations={variations}
-          price={price}
-          category={category}
+          {...product}
         />
         <ProductDetailButtons
           id={"detail-description-tab"}
           cartCheck={false}
           title={"Product Description"}
           icon={DownIcon}
-          header={formattedHeader}
-          description={description}
+          {...product}
         />
       </div>
     );

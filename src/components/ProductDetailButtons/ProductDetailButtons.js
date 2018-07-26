@@ -22,6 +22,19 @@ class ProductDetailButtons extends Component {
       description
     } = this.props;
     const detailShift = buttonOn ? "on" : "off";
+    let formattedHeader = header
+      .split(": ")
+      .map(
+        (word, i, arr) =>
+          arr.indexOf(word) === 0 ? (
+            <span key={i}>
+              {word} :<br />
+            </span>
+          ) : (
+            word
+          )
+      )
+      .reduce((prev, curr) => [prev, " ", curr]);
     return (
       <div className="detail-button">
         <button id={`${id}-${detailShift}`} onClick={this.toggleButton}>
@@ -36,7 +49,7 @@ class ProductDetailButtons extends Component {
           />
         ) : (
           <div className={`header-description-${detailShift}`}>
-            <h2>{header}</h2>
+            <h2>{formattedHeader}</h2>
             <p>{description}</p>
           </div>
         )}

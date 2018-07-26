@@ -18,7 +18,7 @@ class ProductOptions extends Component {
       : this.setState(currentState => ({ quantity: ++currentState.quantity }));
   render() {
     const { quantity, variationVal } = this.state;
-    const { cartShift, variations, price, category } = this.props;
+    const { cartShift, variations, price, category, handleModal } = this.props;
     return (
       <form id={cartShift} onSubmit={this.handleSubmit}>
         <label>
@@ -31,7 +31,7 @@ class ProductOptions extends Component {
             {variations.map((variation, i) => (
               <input
                 className={
-                  variationVal === variation ? "variation-on" : "variation-off"
+                  variationVal === variation ? `variation-on` : `variation-off`
                 }
                 key={i}
                 type="button"
@@ -54,7 +54,17 @@ class ProductOptions extends Component {
             <input type="button" value="+" onClick={this.handleQuantity} />
           </div>
         </label>
-        <input type="submit" value="Confirm" />
+        <div className="options-buttons">
+          {cartShift === "shop-cart" && (
+            <input
+              className="options-cancel"
+              type="button"
+              value="Cancel"
+              onClick={() => handleModal("")}
+            />
+          )}
+          <input className="options-submit" type="submit" value="Confirm" />
+        </div>
       </form>
     );
   }

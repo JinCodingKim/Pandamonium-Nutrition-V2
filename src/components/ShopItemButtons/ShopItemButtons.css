@@ -22,15 +22,15 @@
       width: 12.5px;
       height: 12.5px;
       margin: 2.5px 10px 0 0; }
-  .item-buttons a:first-child {
-    width: calc(65% - 4px); }
-    .item-buttons a:first-child > button:hover {
-      background-color: #4169E1;
-      border: 2px solid #4169E1; }
-    .item-buttons a:first-child > button {
-      background-color: #FF6D00;
-      border: 2px solid #FF6D00;
-      color: #EEEEEE;
+  .item-buttons > button:hover {
+    background-color: #4169E1;
+    border: 2px solid #4169E1; }
+  .item-buttons > button {
+    width: calc(65% - 4px);
+    background-color: #FF6D00;
+    border: 2px solid #FF6D00;
+    color: #EEEEEE; }
+    .item-buttons > button > svg path {
       fill: #EEEEEE; }
   .item-buttons a:last-child {
     width: 35%; }
